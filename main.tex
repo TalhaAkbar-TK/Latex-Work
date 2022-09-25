@@ -1,0 +1,85 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{tikz}
+
+\usetikzlibrary{shapes.geometric, arrows}   
+\usepackage{tabularx}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\title{flowchart}
+\author{akbartalha40 }
+\date{November 2021}
+
+\usepackage{tikz}
+
+
+
+
+
+\begin{document}
+
+
+\usetikzlibrary{shapes,shadows,arrows}
+
+% Define some reusable styles
+\tikzstyle{decision} = [diamond, minimum height=8mm, text centered,text width=5em, draw=black] 
+
+\tikzstyle{startstop}=[draw, ellipse, fill=gray!20, minimum height=8mm, text width=5em, text centered,draw=black]
+\tikzstyle{process} = [draw, rectangle, fill=white, text width=8em, text centered, minimum height=15mm ,draw=black]
+
+
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\begin{figure}
+\begin{tikzpicture}[node distance=2.4cm]
+
+\node (start) [startstop] {Start}; 
+\node (dec1) [decision, below of=start, yshift=-0.5cm] {};
+\node (dec2) [decision, below of=dec1, yshift=-0.5cm] {};
+\node (pro1) [process, below of=dec2,yshift=-0.5cm] {};
+\node (dec3) [decision, below of=pro1, yshift=-0.5cm] {};
+
+\node (pro2) [process, below of=dec3, yshift=-0.5cm] {};
+\node (dec4) [decision, below of=pro2 ,yshift=-0.5cm] {};
+\node (pro3) [process, right of=dec4, xshift=1cm] {};
+\node (dec5) [decision, below of=dec4, yshift=-1cm] {};
+\node (pro4) [process, right of=dec5, xshift=1cm] {};
+\node (pro5) [process, right of=pro4 ,xshift=1cm] {};
+\node (dec6) [decision, below of=dec5, yshift=-1cm] {};
+\node (pro6) [process, right of=dec6, xshift=1cm] {};
+\node (pro7) [process, right of=pro6 , xshift=1cm] {};
+\node (end) [startstop, right of=pro3,xshift=1cm] {end};
+\node (end1) [startstop, right of=pro5,xshift=1cm] {end};
+\node (end2) [startstop, right of=pro7,xshift=1cm] {end};
+
+\draw [arrow] (start) --  (dec1);
+\draw [arrow] (dec1) -- node[anchor=west] {YES} (dec2);
+\draw [arrow] (dec2) -- node[anchor=west] {YES} (pro1); 
+\draw [arrow] (pro1) -- node[anchor=west] {YES} (dec3); 
+\draw [arrow] (dec3) -- (pro2);
+\draw [arrow] (pro2) -- (dec4);
+\draw [arrow] (dec4) -- (dec5); 
+\draw [arrow] (dec5) -- (dec6); 
+\draw [arrow] (dec4) -- (pro3); 
+\draw [arrow] (dec5) -- (pro4); 
+\draw [arrow] (pro4) -- (pro5);
+\draw [arrow] (dec6) -- (pro6);
+\draw [arrow] (pro6) -- (pro7);
+\draw [arrow] (pro3) -- (end);
+\draw [arrow] (pro5) -- (end1);
+\draw [arrow] (pro7) -- (end2);
+\draw [arrow] (dec1) -- node[anchor=south ] {NO}(-2.5cm, -2.9cm) -- (start);
+
+\draw [arrow] (dec2) -- node[anchor= south] {NO}(2.5cm, -5.8cm) |- (dec1); 
+\draw [arrow] (pro1) -- node[anchor=south] {NO}(-2.5cm, -8.7cm) |- (dec2); 
+
+\end{tikzpicture} 
+\caption{Flow of PTBTCF}
+    \label{fig:my_label}
+\end{figure}
+
+\end{document}
