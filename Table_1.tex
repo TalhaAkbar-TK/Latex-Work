@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{fyp tbale}
+\author{akbartalha40 }
+\date{June 2022}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{tikz}
+\usepackage{array,booktabs,arydshln,xcolor}
+\newcommand\VRule[1][\arrayrulewidth]{\vrule width #1}
+\usetikzlibrary{shapes.geometric, arrows}   
+\usepackage{tabularx}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage[export]{adjustbox}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\begin{document}
+
+\begin{table}[h]
+ \caption{}
+    \label{tab:my_label}
+\setlength{\arrayrulewidth}{0.5mm}
+\setlength{\tabcolsep}{1pt}    
+\begin{tabular}{ | m{1.5cm} | m{2.5cm} | m{2.85cm}  m{2.3cm} | m{1.5cm} |   } 
+  \hline
+ & &   &  &   \\ 
+ \hline
+ &  &   &  \hspace{0.25cm} &     \\ 
+ \hline
+      & 500  & \hspace{0.65cm} 498  &\hspace{0.45cm} 496  & \\ 
+ 
+  Case 1    & 500  &\hspace{0.65cm} 496  &\hspace{0.45cm} 496  & success  \\ 
+     
+      & 500 &\hspace{0.65cm} 501  &\hspace{0.45cm} 503 &   \\ 
+   \hline
+   
+      & 240   &\hspace{0.65cm} 242 &\hspace{0.45cm} 245  & \\ 
+
+   Case 2   & 240  &\hspace{0.65cm} 239 &\hspace{0.45cm} 243  & success  \\ 
+   
+      & 240   &\hspace{0.65cm} 244 &\hspace{0.45cm} 242  &   \\ 
+      \hline
+      
+     & 198  &\hspace{0.65cm} 200  &\hspace{0.45cm} 201 & \\ 
+  
+  Case 3     & 198 &\hspace{0.65cm} 197 &\hspace{0.45cm} 200  & success  \\ 
+     
+      & 198 &\hspace{0.65cm} 196 &\hspace{0.45cm} 200 &   \\ 
+      \hline
+      
+      &   &\hspace{0.65cm} 218  &\hspace{0.45cm} 222 & \\ 
+ 
+    Case 4  & 220 &\hspace{0.65cm} 148 &\hspace{0.45cm} 150  & failure  \\ 
+    
+      & 7.0 &\hspace{0.65cm} 155 &\hspace{0.45cm} 149 &   \\
+      \hline
+      
+         & 4.95  &\hspace{0.65cm} 4.64 &\hspace{0.45cm} 4.64 & \\ 
+  
+   Case 5   & 4.95 &\hspace{0.65cm} 4.65  &\hspace{0.45cm} 4.64 & success  \\ 
+    
+      &4.95 &\hspace{0.65cm} 4.63 &\hspace{0.45cm} 4.64 &   \\ 
+      \hline
+               &   &  &  & \\ 
+  
+   Accuracy  &   &  &  & 14/15 = 93\% \\ 
+    
+      &  &  &  &   \\ 
+      \hline
+      
+\end{tabular}
+\end{table}
+\end{document}

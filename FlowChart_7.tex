@@ -1,0 +1,68 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{tikz}
+
+\usetikzlibrary{shapes.geometric, arrows}   
+\usepackage{tabularx}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\title{flowchart}
+\author{akbartalha40 }
+\date{November 2021}
+
+\usepackage{tikz}
+
+
+
+
+
+\begin{document}
+
+
+\usetikzlibrary{shapes,shadows,arrows}
+
+% Define some reusable styles
+\tikzstyle{decision} = [diamond, minimum height=8mm, text centered,text width=5em, draw=black] 
+
+\tikzstyle{startstop}=[draw, ellipse, fill=gray!20, minimum height=8mm, text width=5em, text centered,draw=black]
+\tikzstyle{process} = [draw, rectangle, fill=white, text width=8em, text centered, minimum height=15mm ,draw=black]
+
+
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+
+\begin{figure}    
+\begin{tikzpicture}[node distance=2cm]
+\node (start) [startstop] {Start};
+\node (pro1) [process, below of=start] { };
+\node (pro2) [process, below of=pro1] {};
+\node (dec1) [decision, below of=pro2, yshift=-1cm] {};
+\node (dec2) [decision, below of=dec1, yshift=-2cm] {};
+\node (dec3) [decision, below of=dec2, yshift=-2cm] {};
+\node (dec4) [decision, below of=dec3, yshift=-2cm] {};
+\node (end) [startstop, below of=dec4, yshift=-1cm] {};
+
+
+\draw [arrow] (start) --node[anchor=west] {}  (pro1);
+\draw [arrow] (pro1) --  (pro2);
+\draw [arrow] (pro2) --  (dec1);
+\draw [arrow] (dec1) -- node[anchor=west] {YES} (dec2);
+\draw [arrow] (dec2) -- node[anchor=west] {YES} (dec3); 
+\draw [arrow] (dec3) -- node[anchor=west] {YES} (dec4);
+\draw [arrow] (dec4) -- node[anchor=west] {YES} (end);
+\draw [arrow] (dec1) -- node[anchor= south] {NO}(3cm, -7 cm) |- (pro1);  
+\draw [arrow] (dec2) -- node[anchor= south] {NO}(4cm, -11cm) |- (pro1); 
+\draw [arrow] (dec3) -- node[anchor= south] {NO}(5cm, -15cm) |- (pro1);
+\draw [arrow] (dec4) -- node[anchor= south] {NO}(6cm, -19cm) |- (pro1);
+ 
+\end{tikzpicture} 
+\caption{Flow of FDA}
+    \label{fig:my_label}
+\end{figure}
+
+\end{document}

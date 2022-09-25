@@ -1,0 +1,93 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{tikz}
+
+\usetikzlibrary{shapes.geometric, arrows}   
+\usepackage{tabularx}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\title{flowchart}
+\author{akbartalha40 }
+\date{November 2021}
+
+\usepackage{tikz}
+
+
+
+
+
+\begin{document}
+
+
+\usetikzlibrary{shapes,shadows,arrows}
+
+% Define some reusable styles
+\tikzstyle{decision} = [diamond, minimum height=8mm, text centered,text width=5em, draw=black] 
+
+\tikzstyle{startstop}=[draw, ellipse, fill=gray!20, minimum height=8mm, text width=5em, text centered,draw=black]
+\tikzstyle{process} = [draw, rectangle, fill=white, text width=8em, text centered, minimum height=15mm ,draw=black]
+
+
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\begin{figure}
+\begin{tikzpicture}[node distance=2.4cm]
+
+\node (start) [startstop] {Start}; 
+\node (dec1) [decision, below of=start, yshift=-0.5cm] {};
+\node (dec2) [decision, below of=dec1, yshift=-2cm] {};
+\node (dec3) [decision, below of=dec2, yshift=-2cm] {};
+\node (pro1) [process, below of=dec3,yshift=-1cm] {};
+\node (pro2) [process, right of=pro1,xshift=3cm] {};
+\node (end) [startstop, right of=pro2,xshift=1cm] {end};
+\node (pro3) [process, below of=pro1] {};
+
+
+
+
+\node (pro6) [process, left of=pro1,xshift=-2cm] {};
+% \node (dec5) [decision, below of=pro6, yshift=-1.7cm] {If Any Hit or Fall Detected};
+% \node (pro7) [process, below of=dec5,yshift=-1cm] {Keep Updating};
+% \node (end2) [startstop,right of=pro7, xshift=1cm] {end};
+% \node (pro8) [process, right of=dec5,xshift=2cm] {Send data to thing speak };
+% \node (dec4) [decision, right of=pro8 ,yshift=1.6cm,xshift=1.6cm] {If changes in weight?};
+% \node (dec6) [decision, right of=dec4, xshift=1.3cm] {weight change remains after 15sec};
+% \node (pro4) [process, below of=dec6,yshift=-1.6cm, xshift=0.1cm] {Do not update the weight and keep sensing for values};
+% \node (pro5) [process, right of=dec6,xshift=2cm] {Send data to thing speak};
+
+\draw [arrow] (start) -- node[anchor=west] {YES} (dec1);
+\draw [arrow] (dec1) -- node[anchor=west] {YES} (dec2);
+\draw [arrow] (dec2) -- node[anchor=west] {YES} (dec3); 
+\draw [arrow] (dec3) -- node[anchor=west] {YES} (pro1); 
+\draw [arrow] (pro1) -- (pro6);
+\draw [arrow] (pro1) -- (pro2); 
+% \draw [arrow] (pro6) -- (dec5); 
+% \draw [arrow] (dec5) -- node[anchor=south] {YES}  (pro8); 
+% \draw [arrow] (dec5) -- node[anchor=west] {NO} (pro7); 
+% \draw [arrow] (pro7) -- (end2);
+\draw [arrow] (pro1) -- (pro3);
+% \draw [arrow] (pro3) -- (dec4);
+% \draw [arrow] (dec6) -- node[anchor=west] {NO}(pro4);
+
+% \draw [arrow] (dec6) -- node[anchor=south] {YES}  (pro5);
+\draw [arrow] (pro2) -- (end);
+
+\draw [arrow] (dec1) -- node[anchor=south ] {NO}(-3cm, -3cm) -- (start);
+% \draw [arrow] (dec4) -- (dec6);
+\draw [arrow] (pro1) -- node[anchor= south] {NO}(2.5cm, -15.1cm) |- (dec3); 
+\draw [arrow] (dec3) -- node[anchor=south] {NO}(-2.5cm, -11.8cm) |- (dec2); 
+\draw [arrow] (dec2) -- node[anchor=south ] {NO}(2.5cm, -7.3cm) |- (dec1); 
+
+
+
+
+
+\end{tikzpicture} 
+\caption{Flow of ILWFMGA}
+    \label{fig:my_label}
+\end{figure}
+\end{document}

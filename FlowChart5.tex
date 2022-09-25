@@ -1,0 +1,86 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{tikz}
+
+\usetikzlibrary{shapes.geometric, arrows}   
+\usepackage{tabularx}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\title{flowchart}
+\author{akbartalha40 }
+\date{November 2021}
+
+\usepackage{tikz}
+
+
+
+
+
+\begin{document}
+
+
+\usetikzlibrary{shapes,shadows,arrows}
+
+% Define some reusable styles
+\tikzstyle{decision} = [diamond, minimum height=8mm, text centered,text width=5em, draw=black] 
+
+\tikzstyle{startstop}=[draw, ellipse, fill=gray!20, minimum height=8mm, text width=5em, text centered,draw=black]
+\tikzstyle{process} = [draw, rectangle, fill=white, text width=8em, text centered, minimum height=15mm ,draw=black]
+
+
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\begin{figure}
+\begin{tikzpicture}[node distance=2.4cm]
+
+
+\node (1) [process] {};
+\node (2) [process, right of=1,xshift=1.5cm] {};
+
+
+
+
+
+
+\node (3) [process, left of=1,yshift=1.7cm,xshift=-1.5cm] {};
+\node (4) [process, below of=3, yshift=-1cm,xshift=0.1cm] {};
+
+\node (5) [process, right of=2,xshift=1.7cm] { };
+\node (6) [process, right of=5,yshift=1.7cm,xshift=1.7cm] { };
+\node (7) [process, below of=6, yshift=-1cm] {};
+
+% \draw [arrow] (start) -- node[anchor=west] {YES} (dec1);
+% \draw [arrow] (3) -- node[anchor=west] {YES} (1);
+% \draw [arrow] (dec2) -- node[anchor=west] {YES} (dec3); 
+% \draw [arrow] (dec3) -- node[anchor=west] {YES} (pro1); 
+\draw [arrow] (1) -- (2);
+\draw [arrow] (2) -- (5); 
+% \draw [arrow] (pro6) -- (dec5); 
+% \draw [arrow] (dec5) -- node[anchor=south] {YES}  (pro8); 
+% \draw [arrow] (dec5) -- node[anchor=west] {NO} (pro7); 
+% \draw [arrow] (pro7) -- (end2);
+% \draw [arrow] (pro1) -- (pro3);
+% \draw [arrow] (pro3) -- (dec4);
+% \draw [arrow] (dec6) -- node[anchor=west] {NO}(pro4);
+
+% \draw [arrow] (dec6) -- node[anchor=south] {YES}  (pro5);
+% \draw [arrow] (pro2) -- (end);
+\draw [arrow] (4) -- node[anchor=south] {}(-3.8cm, 0cm) |- (1);
+% \draw [arrow] (dec1) -- node[anchor=south ] {NO}(-3cm, -3cm) -- (start);
+% \draw [arrow] (dec4) -- (dec6);
+% \draw [arrow] (3) -- node[anchor= south] {NO}(2.5cm, -15.1cm) |- (dec3); 
+\draw [arrow] (3) -- node[anchor=south] {}(-3.8cm, 1cm) |- (1); 
+% \draw [arrow] (dec2) -- node[anchor=south ] {NO}(2.5cm, -7.3cm) |- (dec1); 
+\draw [arrow] (5) -- node[anchor=south] {}(8cm, 1cm) |- (6);
+\draw [arrow] (5) -- node[anchor=south] {}(8cm, -1cm) |- (7);
+
+
+\end{tikzpicture} 
+\caption{Flow of ILWFMGA}
+    \label{fig:my_label}
+\end{figure}
+\end{document}
