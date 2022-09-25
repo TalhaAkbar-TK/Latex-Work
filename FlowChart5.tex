@@ -53,28 +53,13 @@
 \node (6) [process, right of=5,yshift=1.7cm,xshift=1.7cm] { };
 \node (7) [process, below of=6, yshift=-1cm] {};
 
-% \draw [arrow] (start) -- node[anchor=west] {YES} (dec1);
-% \draw [arrow] (3) -- node[anchor=west] {YES} (1);
-% \draw [arrow] (dec2) -- node[anchor=west] {YES} (dec3); 
-% \draw [arrow] (dec3) -- node[anchor=west] {YES} (pro1); 
+
 \draw [arrow] (1) -- (2);
 \draw [arrow] (2) -- (5); 
-% \draw [arrow] (pro6) -- (dec5); 
-% \draw [arrow] (dec5) -- node[anchor=south] {YES}  (pro8); 
-% \draw [arrow] (dec5) -- node[anchor=west] {NO} (pro7); 
-% \draw [arrow] (pro7) -- (end2);
-% \draw [arrow] (pro1) -- (pro3);
-% \draw [arrow] (pro3) -- (dec4);
-% \draw [arrow] (dec6) -- node[anchor=west] {NO}(pro4);
-
-% \draw [arrow] (dec6) -- node[anchor=south] {YES}  (pro5);
-% \draw [arrow] (pro2) -- (end);
 \draw [arrow] (4) -- node[anchor=south] {}(-3.8cm, 0cm) |- (1);
-% \draw [arrow] (dec1) -- node[anchor=south ] {NO}(-3cm, -3cm) -- (start);
-% \draw [arrow] (dec4) -- (dec6);
-% \draw [arrow] (3) -- node[anchor= south] {NO}(2.5cm, -15.1cm) |- (dec3); 
+ 
 \draw [arrow] (3) -- node[anchor=south] {}(-3.8cm, 1cm) |- (1); 
-% \draw [arrow] (dec2) -- node[anchor=south ] {NO}(2.5cm, -7.3cm) |- (dec1); 
+
 \draw [arrow] (5) -- node[anchor=south] {}(8cm, 1cm) |- (6);
 \draw [arrow] (5) -- node[anchor=south] {}(8cm, -1cm) |- (7);
 
